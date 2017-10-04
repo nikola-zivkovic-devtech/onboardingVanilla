@@ -16,5 +16,7 @@
     127.0.0.1   vanilla.local
   to the list of hostnames
 
+- Restart Apache.
+
 
 2. App is ran by opening 'vanilla.local' from web browser.
