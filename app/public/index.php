@@ -6,7 +6,7 @@
  * Time: 10:10
  */
 
-require_once '../bootstrap.php';
+require_once dirname(__FILE__) . '/../bootstrap.php';
 
 
 
