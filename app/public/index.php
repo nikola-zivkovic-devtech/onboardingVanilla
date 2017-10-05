@@ -9,5 +9,8 @@
 require_once dirname(__FILE__) . '/../bootstrap.php';
 
 
+$dispatcher->add('/');
+$dispatcher->add('/about');
+$dispatcher->add('/hello/{name}');
 
-echo $initial;
+$dispatcher->printRoutsList();

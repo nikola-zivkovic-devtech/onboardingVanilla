@@ -16,4 +16,8 @@ class Dispatcher {
     public function add($url) {
         $this->url[] = $url;
     }
+
+    public function printRoutsList() {
+        print_r($this->url);
+    }
 }

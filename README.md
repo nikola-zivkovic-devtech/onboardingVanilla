@@ -19,4 +19,4 @@
 - Restart Apache.
 
 
-2. App is ran by opening 'vanilla.local' from web browser.
+2. App is ran by opening 'vanilla.local' from web browser. Supported routes should be shown.
