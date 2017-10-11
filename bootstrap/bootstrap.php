@@ -6,4 +6,7 @@
  * Time: 14:04
  */
 
+require_once dirname(__FILE__) . '/../src/autoload.php';
+
+
 $initial = 'Hi!';
