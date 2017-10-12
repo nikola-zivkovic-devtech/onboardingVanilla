@@ -6,7 +6,7 @@
  * Time: 11:11
  */
 
-namespace Managers;
+namespace NZ\Managers;
 
 
 class Dispatcher {

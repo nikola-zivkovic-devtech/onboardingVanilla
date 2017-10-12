@@ -6,7 +6,7 @@
  * Time: 12:42
  */
 
-namespace Controllers;
+namespace NZ\Controllers;
 
 
 class About {

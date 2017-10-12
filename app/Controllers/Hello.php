@@ -6,7 +6,7 @@
  * Time: 12:43
  */
 
-namespace Controllers;
+namespace NZ\Controllers;
 
 
 class Hello {
