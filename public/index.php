@@ -12,7 +12,8 @@ require_once '../bootstrap/bootstrap.php';
 
 
 $dispatcher->add('/');
+$dispatcher->add('/index');
 $dispatcher->add('/about');
-$dispatcher->add('/hello/{name}');
+$dispatcher->add('/hello');
 
-$dispatcher->printRoutsList();
+$dispatcher->run();
