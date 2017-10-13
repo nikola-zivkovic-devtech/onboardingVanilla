@@ -6,7 +6,9 @@
  * Time: 10:10
  */
 
-require_once dirname(__FILE__) . '/../bootstrap.php';
+
+require_once '../bootstrap/bootstrap.php';
+
 
 
 $dispatcher->add('/');

@@ -8,7 +8,7 @@
 
 
 function autoloadClasses($className) {
-    $filename = __DIR__ . '\app\lib\\' . $className . '.php';
+    $filename = __DIR__ . '\\' . $className . '.php';
     if (is_readable($filename)) {
         require_once $filename;
     }
