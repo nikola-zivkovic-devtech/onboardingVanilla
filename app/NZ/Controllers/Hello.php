@@ -8,9 +8,8 @@
 
 namespace NZ\Controllers;
 
-
-class Hello {
-
+class Hello
+{
     private $name;
 
     public function __construct($name = null) {

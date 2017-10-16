@@ -8,10 +8,10 @@
 
 namespace NZ\Controllers;
 
-
-class About {
-
-    public function __construct() {
+class About
+{
+    public function __construct()
+    {
         echo "About.";
     }
 

@@ -8,10 +8,10 @@
 
 namespace NZ\Controllers;
 
-
-class ErrorMsg {
-
-    public function __construct($msg) {
+class ErrorMsg
+{
+    public function __construct($msg)
+    {
         echo '<br>' . $msg . '<br>';
     }
 }

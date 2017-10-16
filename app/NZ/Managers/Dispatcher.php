@@ -12,23 +12,21 @@ use NZ\Controllers\Welcome;
 use NZ\Controllers\ErrorMsg;
 use NZ\Enums\NamespacePaths;
 
-
-class Dispatcher {
-
+class Dispatcher
+{
     private $routes = array();
 
-    public function add($url) {
+    public function add($url)
+    {
         $this->routes[] = $url;
     }
 
-    public function run() {
-
+    public function run()
+    {
         $urlSegments = $this->getParsedUrl();
-
         $match = false;
 
         foreach ($this->routes as $route) {
-
             if(preg_match("#^$route$#", '/' . $urlSegments[0])) {
                 $match = true;
 
@@ -52,21 +50,24 @@ class Dispatcher {
 
     }
 
-    private function getParsedUrl() {
-
+    private function getParsedUrl()
+    {
         $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
         return explode('/', trim($url, '/'));
     }
 
-    private function loadWelcomePage() {
+    private function loadWelcomePage()
+    {
         new Welcome();
     }
 
-    private function classExists($className) {
+    private function classExists($className)
+    {
         return file_exists(__DIR__ . '/../Controllers/' . $className . '.php');
     }
 
-    private function loadController($urlSegments) {
+    private function loadController($urlSegments)
+    {
         $className = NamespacePaths::CONTROLLERS_PATH . $urlSegments[0];
 
         try {
@@ -80,7 +81,8 @@ class Dispatcher {
         }
     }
 
-    private function loadError($msg) {
+    private function loadError($msg)
+    {
         new ErrorMsg($msg);
         return false;
     }

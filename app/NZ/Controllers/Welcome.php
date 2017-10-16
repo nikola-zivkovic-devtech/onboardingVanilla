@@ -8,10 +8,10 @@
 
 namespace NZ\Controllers;
 
-
-class Welcome {
-
-    public function __construct() {
+class Welcome
+{
+    public function __construct()
+    {
         echo "Vanilla App welcome message.";
     }
 }
