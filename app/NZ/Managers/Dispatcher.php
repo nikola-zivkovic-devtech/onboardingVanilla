@@ -12,15 +12,32 @@ use NZ\Controllers\Welcome;
 use NZ\Controllers\ErrorMsg;
 use NZ\Enums\NamespacePaths;
 
+/**
+ * Class Dispatcher
+ * Stores routes and connects them to their respective handlers.
+ */
 class Dispatcher
 {
+    /**
+     * @var array   Contains defined routes.
+     */
     private $routes = array();
 
+    /**
+     * Adds routes to a local array.
+     *
+     * @param $url
+     */
     public function add($url)
     {
         $this->routes[] = $url;
     }
 
+    /**
+     * Handles routes by pointing them to handler classes.
+     *
+     * @return void
+     */
     public function run()
     {
         $urlSegments = $this->getParsedUrl();

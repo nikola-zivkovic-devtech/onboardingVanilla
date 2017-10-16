@@ -8,6 +8,10 @@
 
 namespace NZ\Controllers;
 
+/**
+ * Class Hello
+ * Loads the Hello page.
+ */
 class Hello
 {
     private $name;

@@ -8,6 +8,10 @@
 
 namespace NZ\Controllers;
 
+/**
+ * Class Welcome
+ * Loads the Welcome page
+ */
 class Welcome
 {
     public function __construct()
