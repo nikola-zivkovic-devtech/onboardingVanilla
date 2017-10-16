@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nikola.zivkovic
- * Date: 05-Oct-17
- * Time: 11:11
- */
 
 namespace NZ\Managers;
 
@@ -51,7 +45,6 @@ class Dispatcher
                     $this->loadWelcomePage();
                 } else {
                     if ($this->classExists($urlSegments[0])) {
-                        //echo '<br>class exists<br>';
                         $this->loadController($urlSegments);
                     } else {
                         $this->loadError('Action not possible.');
@@ -91,7 +84,8 @@ class Dispatcher
             if(isset($urlSegments[1])) {
                 new $className($urlSegments[1]);
             } else {
-                new $className();
+                $funriturePiece = new $className();
+                $funriturePiece->printName();
             }
         } catch (\Exception $e) {
             $this->loadError($e->getMessage());

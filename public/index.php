@@ -13,7 +13,8 @@ require_once '../bootstrap/bootstrap.php';
 
 $dispatcher->add('/');
 $dispatcher->add('/index');
-$dispatcher->add('/about');
 $dispatcher->add('/hello');
+$dispatcher->add('/chair');
+$dispatcher->add('/sofa');
 
 $dispatcher->run();
