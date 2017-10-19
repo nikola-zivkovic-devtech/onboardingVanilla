@@ -1,9 +1,9 @@
 <?php
 
-namespace NZ\Controllers;
+namespace NZ\Services;
 
-use NZ\Managers\Furniture;
-use NZ\Interfaces\IFurniture;
+use NZ\Contracts\Furniture;
+use NZ\Contracts\IFurniture;
 
 /**
  * Class Chair

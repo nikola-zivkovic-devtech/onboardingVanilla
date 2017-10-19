@@ -1,9 +1,9 @@
 <?php
 
-namespace NZ\Managers;
+namespace NZ\Controllers;
 
-use NZ\Controllers\Welcome;
-use NZ\Controllers\ErrorMsg;
+use NZ\Services\Welcome;
+use NZ\Services\ErrorMsg;
 use NZ\Enums\NamespacePaths;
 
 /**
@@ -73,7 +73,7 @@ class Dispatcher
 
     private function classExists($className)
     {
-        return file_exists(__DIR__ . '/../Controllers/' . $className . '.php');
+        return file_exists(__DIR__ . '/../Services/' . $className . '.php');
     }
 
     private function loadController($urlSegments)
@@ -85,7 +85,8 @@ class Dispatcher
                 new $className($urlSegments[1]);
             } else {
                 $funriturePiece = new $className();
-                $funriturePiece->printName();
+                print_r($funriturePiece);
+                //$funriturePiece->printName();
             }
         } catch (\Exception $e) {
             $this->loadError($e->getMessage());

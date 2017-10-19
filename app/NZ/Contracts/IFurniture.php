@@ -1,6 +1,6 @@
 <?php
 
-namespace NZ\Interfaces;
+namespace NZ\Contracts;
 
 interface IFurniture
 {

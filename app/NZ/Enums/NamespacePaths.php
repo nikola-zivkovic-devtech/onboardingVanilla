@@ -4,5 +4,5 @@ namespace NZ\Enums;
 
 class NamespacePaths
 {
-    const CONTROLLERS_PATH = 'NZ\Controllers\\';
+    const CONTROLLERS_PATH = 'NZ\Services\\';
 }

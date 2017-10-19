@@ -1,6 +1,6 @@
 <?php
 
-namespace NZ\Controllers;
+namespace NZ\Services;
 
 /**
  * Class ErrorMsg
