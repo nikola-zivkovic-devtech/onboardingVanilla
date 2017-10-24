@@ -1,9 +1,8 @@
 <?php
 
-namespace NZ\Controllers;
+namespace NZ\Managers;
 
-use NZ\Services\Welcome;
-use NZ\Services\ErrorMsg;
+use NZ\Controllers\ErrorMsg;
 use NZ\Enums\NamespacePaths;
 
 /**
@@ -20,11 +19,15 @@ class Dispatcher
     /**
      * Adds routes to a local array.
      *
-     * @param $url
+     * @param $uri
+     * @param $controller
      */
-    public function add($url)
+    public function add($uri, $controller)
     {
-        $this->routes[] = $url;
+        $this->routes[] = [
+            'uri' =>$uri,
+            'controller' => $controller
+        ];
     }
 
     /**
@@ -38,18 +41,9 @@ class Dispatcher
         $match = false;
 
         foreach ($this->routes as $route) {
-            if(preg_match("#^$route$#", '/' . $urlSegments[0])) {
+            if(preg_match("#^$route[uri]$#", '/' . $urlSegments[0])) {
                 $match = true;
-
-                if(empty($urlSegments[0]) || $urlSegments[0] == 'index') {
-                    $this->loadWelcomePage();
-                } else {
-                    if ($this->classExists($urlSegments[0])) {
-                        $this->loadController($urlSegments);
-                    } else {
-                        $this->loadError('Action not possible.');
-                    }
-                }
+                $this->loadController($route, $urlSegments);
                 break;
             }
         }
@@ -57,7 +51,6 @@ class Dispatcher
         if(!$match) {
             $this->loadError('No such action.');
         }
-
     }
 
     private function getParsedUrl()
@@ -66,27 +59,17 @@ class Dispatcher
         return explode('/', trim($url, '/'));
     }
 
-    private function loadWelcomePage()
+    private function loadController($route, $urlSegments)
     {
-        new Welcome();
-    }
+        try{
+            $className = NamespacePaths::CONTROLLERS_PATH . $route['controller'];
 
-    private function classExists($className)
-    {
-        return file_exists(__DIR__ . '/../Services/' . $className . '.php');
-    }
-
-    private function loadController($urlSegments)
-    {
-        $className = NamespacePaths::CONTROLLERS_PATH . $urlSegments[0];
-
-        try {
             if(isset($urlSegments[1])) {
                 new $className($urlSegments[1]);
+            } elseif($urlSegments[0] == 'hello') {
+                new $className();
             } else {
-                $funriturePiece = new $className();
-                print_r($funriturePiece);
-                //$funriturePiece->printName();
+                new $className($urlSegments[0]);
             }
         } catch (\Exception $e) {
             $this->loadError($e->getMessage());

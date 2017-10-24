@@ -9,4 +9,4 @@
 require_once dirname(__FILE__) . '/../app/autoload.php';
 
 
-$dispatcher = new \NZ\Controllers\Dispatcher();
+$dispatcher = new \NZ\Managers\Dispatcher();

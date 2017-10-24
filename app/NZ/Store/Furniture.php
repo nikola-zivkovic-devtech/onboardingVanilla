@@ -1,6 +1,6 @@
 <?php
 
-namespace NZ\Contracts;
+namespace NZ\Store;
 
 class Furniture
 {

@@ -1,9 +1,6 @@
 <?php
 
-namespace NZ\Services;
-
-use NZ\Contracts\Furniture;
-use NZ\Contracts\IFurniture;
+namespace NZ\Store;
 
 /**
  * Class Chair
