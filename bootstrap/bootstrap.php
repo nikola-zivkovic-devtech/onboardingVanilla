@@ -6,7 +6,7 @@
  * Time: 14:04
  */
 
-require_once dirname(__FILE__) . '/../src/autoload.php';
+require_once dirname(__FILE__) . '/../app/autoload.php';
 
 
-$initial = 'Hi!';
+$dispatcher = new \NZ\Managers\Dispatcher();

@@ -11,5 +11,10 @@ require_once '../bootstrap/bootstrap.php';
 
 
 
+$dispatcher->add('/', "Welcome");
+$dispatcher->add('/index', "Welcome");
+$dispatcher->add('/hello', "Hello");
+$dispatcher->add('/chair', "Store");
+$dispatcher->add('/sofa', "Store");
 
-echo $initial;
+$dispatcher->run();
